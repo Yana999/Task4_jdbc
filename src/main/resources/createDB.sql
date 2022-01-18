@@ -1,0 +1,5 @@
+CREATE DATABASE warehouse;
+
+CREATE USER user1 WITH PASSWORD'user';
+
+GRANT ALL PRIVILEGES ON DATABASE "warehouse" to user1;

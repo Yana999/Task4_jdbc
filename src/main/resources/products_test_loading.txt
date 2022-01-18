@@ -1,0 +1,25 @@
+T-shirt;130;1.30;South
+T-shirt;270;1.95;South
+T-shirt;186;1.03;North
+Socks;45;0.30;South
+T-shirt2;270;10.95;South
+
+Water;5,78;6.89123;North
+Juice;9.78;6.89123;North
+BottleWater;5.7895;6.89;North
+Bread34&*(;5.87; 8; West
+Bread;-5.87; 8; West
+Milk; 1; -8.34;West
+Tea; 1.07;4.44;West
+BlackTea;1.07; 4.44;768%4#West*
+
+Water;5.78;12;A
+Juice;9.78;54;A
+BottleWater;5.895;2;A
+Bread1;5.87; 16; A
+Bread;5.87; 22; A
+Milk; 1; 24; A
+Tea; 1.07;54;B
+BlackTea;1.07; 23;B
+T-shirt3;270;11;B
+T-shirt;186;22;B

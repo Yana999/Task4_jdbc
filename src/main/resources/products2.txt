@@ -1,0 +1,14 @@
+Product1;1;10;Store1
+Product2;1;20;Store1
+Product3;1;30;Store1
+Product5;1;40;Store1
+Product6;1;50;Store1
+Product7;1;60;Store1
+Product8;1;70;Store1
+Product9;1;80;Store1
+Product10;1;90;Store1
+Product11;1;100;Store1
+Product12;1;130;Store2
+Product13;1;30;Store3
+Product14;1;120;Store2
+Product15;1;40;Store2

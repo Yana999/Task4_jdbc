@@ -1,0 +1,5 @@
+T-shirt;130;1.30;South
+T-shirt;270;1.95;South
+T-shirt;186;1.03;North
+Socks;45;0.30;South
+T-shirt2;270;10.95;South
