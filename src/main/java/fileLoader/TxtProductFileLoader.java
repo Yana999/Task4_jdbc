@@ -45,7 +45,6 @@ private final static Connection connection = ConnectionUtil.getConnection();
                     e.printStackTrace();
                 } catch (SQLException e) {
                     System.out.println("Impossible to save line " + line + " number " + lineNumber + " into db");
-                    e.printStackTrace();
                 }
             }
         }catch (FileNotFoundException e) {
