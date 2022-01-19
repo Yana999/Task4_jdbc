@@ -29,6 +29,7 @@ public final class ConnectionUtil {
         try {
             if(!connection.isClosed()) {
                 connection.close();
+                System.out.println("connection closed");
             }
         }catch (SQLException e){
             System.out.println("Impossible to close db connection");

@@ -42,6 +42,7 @@ private final static Connection connection = ConnectionUtil.getConnection();
 
                 } catch (PSQLException e) {
                     System.out.println("The line " + " number " + lineNumber + " " + line + " contains wrong value of weight or cost. It cannot be negative");
+                    e.printStackTrace();
                 } catch (SQLException e) {
                     System.out.println("Impossible to save line " + line + " number " + lineNumber + " into db");
                     e.printStackTrace();
