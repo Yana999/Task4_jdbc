@@ -3,6 +3,7 @@ package entity;
 import exception.InputValueException;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Objects;
 
 public final class Product {
@@ -40,10 +41,11 @@ public final class Product {
         cost = cost.replace(",", ".");
         try {
             convertedCost = new BigDecimal(cost);
+            convertedCost.setScale(2, RoundingMode.HALF_UP);
         }catch (NumberFormatException e){
             throw new InputValueException("cost", cost);
         }
-        if(convertedCost.compareTo(BigDecimal.ZERO) < 0 || convertedCost.ulp().compareTo(new BigDecimal("0.01")) < 0) {
+        if(convertedCost.compareTo(BigDecimal.ZERO) < 0) {
             throw new InputValueException( "cost", cost);
         }
         return new Product(name, convertedWeight, convertedCost);

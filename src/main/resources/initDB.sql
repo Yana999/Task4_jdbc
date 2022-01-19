@@ -13,6 +13,6 @@ CREATE TABLE store(
 CREATE TABLE product(
                                id 		 bigserial 	PRIMARY KEY,
                                name	 text		NOT NULL,
-                               weight 	 numeric(3) 		NOT NULL,
-                               cost 	 numeric(2) 		NOT NULL,
+                               weight 	 double precision 		NOT NULL,
+                               cost 	 double precision 		NOT NULL,
                                store_id integer	REFERENCES store (id));

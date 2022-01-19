@@ -14,25 +14,29 @@ public class DatabaseLoader {
         List<Store> stores = new LinkedList<>();
         Connection connection = ConnectionUtil.getConnection();
         try(PreparedStatement getProducts = connection.prepareStatement("SELECT * FROM Task_4.product WHERE store_id = ?");
-        Statement getStore = connection.createStatement()){
+            Statement getStore = connection.createStatement()){
             ResultSet getStoreResult = getStore.executeQuery("SELECT * FROM Task_4.store");
             while(getStoreResult.next()) {
-                Store store = new Store(getStoreResult.getString(2));
-                getProducts.setInt(1, getStoreResult.getInt(1));
-                ResultSet getProductResult = getProducts.executeQuery();
-                while (getProductResult.next()) {
-                    try {
-                        Product product = Product.parseProduct(getProductResult.getString(2),
-                                getProductResult.getString(4),
-                                getProductResult.getString(3));
-                        store.addProduct(product);
-                    }catch (InputValueException e){
-                        System.out.println("wrong product " + getProductResult.getString(2) +
-                                " " +  getProductResult.getString(4) +
-                                " " + getProductResult.getString(3) + "impossible to load from db");
+                try {
+                    Store store = Store.parseStore(getStoreResult.getString(2));
+                    getProducts.setInt(1, getStoreResult.getInt(1));
+                    ResultSet getProductResult = getProducts.executeQuery();
+                    while (getProductResult.next()) {
+                        try {
+                            Product product = Product.parseProduct(getProductResult.getString(2),
+                                    getProductResult.getString(4),
+                                    getProductResult.getString(3));
+                            store.addProduct(product);
+                        } catch (InputValueException e) {
+                            System.out.println("wrong product " + getProductResult.getString(2) +
+                                    " " + getProductResult.getString(4) +
+                                    " " + getProductResult.getString(3) + "impossible to load from db");
+                        }
                     }
+                    stores.add(store);
+                }catch (InputValueException e){
+                    System.out.println("wrong store name " + getStoreResult.getString(2));
                 }
-                stores.add(store);
             }
             getStoreResult.close();
 
