@@ -13,6 +13,8 @@ Milk; 1; -8.34;West
 Tea; 1.07;4.44;West
 BlackTea;1.07; 4.44;768%4#West*
 
+Tomato; -123;324; rrrr
+
 Water;5.78;12;A
 Juice;9.78;54;A
 BottleWater;5.895;2;A

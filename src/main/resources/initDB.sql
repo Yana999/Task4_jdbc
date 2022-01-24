@@ -6,12 +6,12 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA Task_4 TO user1;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA Task_4 TO user1;
 
 CREATE TABLE store(
-                             id 		bigserial 	PRIMARY KEY,
-                             name 	text 		NOT NULL);
+                             id 		bigserial 	    PRIMARY KEY,
+                             name 	    VARCHAR(50) 	NOT NULL);
 
 CREATE TABLE product(
-                               id 		 bigserial 	PRIMARY KEY,
-                               name	 text		NOT NULL,
-                               weight 	 double precision 		NOT NULL,
-                               cost 	 double precision 		NOT NULL,
-                               store_id integer	REFERENCES store (id));
+                               id 		 bigserial 	        PRIMARY KEY,
+                               name	     VARCHAR(50)		NOT NULL,
+                               weight 	 NUMERIC(30,2) 		NOT NULL CHECK (weight >= 0),
+                               cost 	 NUMERIC(30, 3) 	NOT NULL CHECK (cost >= 0),
+                               store_id  INTEGER	        REFERENCES store (id));

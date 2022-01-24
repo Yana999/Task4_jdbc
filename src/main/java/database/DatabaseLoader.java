@@ -28,9 +28,7 @@ public class DatabaseLoader {
                                     getProductResult.getString(3));
                             store.addProduct(product);
                         } catch (InputValueException e) {
-                            System.out.println("wrong product " + getProductResult.getString(2) +
-                                    " " + getProductResult.getString(4) +
-                                    " " + getProductResult.getString(3) + "impossible to load from db");
+                            System.out.println(e.getMessage() + "impossible to load from db");
                         }
                     }
                     stores.add(store);
