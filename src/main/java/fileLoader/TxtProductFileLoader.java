@@ -104,8 +104,7 @@ public class TxtProductFileLoader implements ProductFileLoader {
                         getStoreId.setString(1, splitLine[3].trim());
                         ResultSet storeID = getStoreId.executeQuery();
                         if (!storeID.next()) {
-                            saveStore(insertStore, splitLine[3].trim());
-                            storeID = getStoreId.executeQuery();
+                            storeID = saveStore(insertStore, splitLine[3].trim());
                             storeID.next();
                         }
                         try {
@@ -153,9 +152,9 @@ public class TxtProductFileLoader implements ProductFileLoader {
     }
 
 
-    private void saveStore(PreparedStatement insertStore, String name)throws SQLException{
+    private ResultSet saveStore(PreparedStatement insertStore, String name)throws SQLException{
         insertStore.setString(1, name);
-        insertStore.executeUpdate();
+       return  insertStore.executeQuery();
     }
 
     private void saveProduct(PreparedStatement insertProduct, String name, float weight, BigDecimal cost, int store_id) throws SQLException{
